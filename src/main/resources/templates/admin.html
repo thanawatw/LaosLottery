@@ -244,7 +244,7 @@
 <script type="text/javascript" th:src="@{/js/sweetalert2.min.js}"></script>
 
 <script th:inline="javascript">
-
+    var $lotteryPrizes = [[${lotteryPrizes}]];
     var $dataTables;
     $(document).ready(function () {
         $dataTables = $('#lottery-prizes-table').DataTable();
@@ -257,33 +257,43 @@
 
         $("body").on('submit', '#formLotteryPrizeModal', function (e) {
             e.preventDefault();
-            var $form = $('#formLotteryPrize');
-            $.ajax({
-                type: 'POST',
-                async: false,
-                dataType: 'text',
-                data: $.param($form.serializeArray()),
-                url: '/admin/lottery-prize/save',
-                success: function (data, textStatus) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: data,
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then((result) => {
-                        location.reload();
-                    });
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: xhr.responseText,
-                        showConfirmButton: true
-                    }).then((result) => {
-                        return;
-                    });
-                }
-            });
+            if ($lotteryPrizes.some($lotteryPrize => $lotteryPrize.drawDate === $('#drawDate').val())) {
+                Swal.fire({
+                    icon: 'error',
+                    title: "มีผลรางวัลประที่ " + $('#drawDate').val() + " แล้ว",
+                    showConfirmButton: true
+                }).then((result) => {
+                    return;
+                });
+            } else {
+                var $form = $('#formLotteryPrize');
+                $.ajax({
+                    type: 'POST',
+                    async: false,
+                    dataType: 'text',
+                    data: $.param($form.serializeArray()),
+                    url: '/admin/lottery-prize/save',
+                    success: function (data, textStatus) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: data,
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then((result) => {
+                            location.reload();
+                        });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: xhr.responseText,
+                            showConfirmButton: true
+                        }).then((result) => {
+                            return;
+                        });
+                    }
+                });
+            }
         });
     });
 
