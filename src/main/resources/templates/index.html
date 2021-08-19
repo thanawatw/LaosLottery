@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>LAOLOTTERY</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <!--    <link href="assets/img/logo-phoenix.png" rel="icon">-->
+    <!--    <link href="assets/img/logo-phoenix.png" rel="apple-touch-icon">-->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/icofont/icofont.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/venobox/venobox.css}" rel="stylesheet">
+    <link th:href="@{/vendor/remixicon/remixicon.css}" rel="stylesheet">
+    <link th:href="@{/vendor/owl.carousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/aos/aos.css}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Template Main CSS File -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Bootslander - v2.3.1
+  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center">
+
+        <div class="logo mr-auto">
+            <!-- <h1 class="text-light"><a href="index.html"><span>UROPASLOT</span></a></h1> -->
+            <h1 class="text-light">
+                <a href="index.html"><span style="color: #e5b858; margin-top: 20px;">LAOLOTTERY</span></a>
+
+                <!-- <a href="index.html"><img src="assets/img/" class="img-fluid animated"><span style="color: #e5b858; margin-top: 20px;">LAOLOTTERY</span></a> -->
+
+            </h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                <div data-aos="zoom-out">
+                    <!-- <h1>Jackpot แตกทุกชั่วโมง<span>Bigwin</span>ทุกนาที</h1> -->
+                    <!-- <img src="assets/img/logo5.png" class="img-fluid" style="width: 500px;margin-bottom: 30px;"> -->
+                    <h2>หวยลาว หวยลาวออนไลน์ เลขเด็ดหวยลาว ตรวจหวยลาว หวยลาวย้อนหลัง!!!</h2>
+                </div>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                <!-- <img src="assets/img/img-topplay.png" class="img-fluid animated" alt=""> -->
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Hero -->
+
+<main id="main">
+
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+
+
+            <div class="section-title">
+                <h2>Laos lottery results</h2>
+                <p style="color: #e5b858;">ຜົນການອອກຫວຍລາວ gold</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box true" style="margin-bottom: 30px;">
+                        <h3>เลขท้าย 5 ตัว</h3>
+                        <h4 th:text="${todayLotteryPrize.fiveDigitsPrize ne null ? todayLotteryPrize.fiveDigitsPrize : 'XXXXX'}"></h4>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="box true">
+                        <h3>เลขท้าย 4 ตัว</h3>
+                        <h4 th:text="${todayLotteryPrize.fiveDigitsPrize ne null ? #strings.substring(todayLotteryPrize.fiveDigitsPrize,1,5) : 'XXXX'}"></h4>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="box true">
+                        <h3>เลขท้าย 3 ตัว</h3>
+                        <h4 th:text="${todayLotteryPrize.fiveDigitsPrize ne null ? #strings.substring(todayLotteryPrize.fiveDigitsPrize,2,5) : 'XXX'}"></h4>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="box true">
+                        <h3>เลขท้าย 2 ตัวบน</h3>
+                        <h4 th:text="${todayLotteryPrize.fiveDigitsPrize ne null ? #strings.substring(todayLotteryPrize.fiveDigitsPrize,3,5) : 'XX'}"></h4>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="box true">
+                        <h3>เลขท้าย 2 ตัวล่าง</h3>
+                        <h4 th:text="${todayLotteryPrize.twoDigitsPrize ne null ? todayLotteryPrize.twoDigitsPrize : 'XX'}"></h4>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- End-->
+
+    <!-- =======Section ======= -->
+    <section id="faq" class="faq section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>LAOS LOTTERY </h2>
+                <p style="color: #e5b858; font-size: 18px;">ຜົນການອອກຫວຍລາວ</p>
+            </div>
+            <div class="row no-gutters" data-aos="fade-left">
+                <table class="table table-bordered table-dark text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">วันที่</th>
+                        <th scope="col">5 ตัว</th>
+                        <th scope="col">4 ตัว</th>
+                        <th scope="col">3 ตัว</th>
+                        <th scope="col">2 ตัวบน</th>
+                        <th scope="col">2 ตัวล่าง</th>
+                        <th scope="col">2 ตัว</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="lotteryPrize : ${lotteryPrizes}">
+                        <th scope="row" th:text="${#dates.format(lotteryPrize.drawDate, 'dd/MM/yyyy')}"></th>
+                        <td th:text="${lotteryPrize.fiveDigitsPrize ne null ? lotteryPrize.fiveDigitsPrize : 'XXXXX'}"></td>
+                        <td th:text="${lotteryPrize.fiveDigitsPrize ne null ? #strings.substring(lotteryPrize.fiveDigitsPrize,1,5) : 'XXXX'}"></td>
+                        <td th:text="${lotteryPrize.fiveDigitsPrize ne null ? #strings.substring(lotteryPrize.fiveDigitsPrize,2,5) : 'XXX'}"></td>
+                        <td th:text="${lotteryPrize.fiveDigitsPrize ne null ? #strings.substring(lotteryPrize.fiveDigitsPrize,3,5) : 'XX'}"></td>
+                        <td th:text="${lotteryPrize.twoDigitsPrize ne null ? lotteryPrize.twoDigitsPrize : 'XX'}"></td>
+                        <td th:text="${lotteryPrize.fiveDigitsPrize ne null ? #strings.substring(lotteryPrize.fiveDigitsPrize,4,5) : 'X'}"></td>
+                    </tr>
+                    <!-- <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- End-->
+
+
+</main>
+<!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+    <!--    <div class="navbar d-lg-none" id="menumobile">-->
+    <!--        <a href="cash_deposit.html"><i class="icofont-money"></i> ฝากเงิน</a>-->
+    <!--        <a href="withdraw_money.html"><i class="fa fa-usd"></i> ถอนเงิน</a>-->
+    <!--        <a href=""><i class="icofont-ui-play"></i> ทางเข้าเกม</a>-->
+
+    <!--    </div>-->
+
+
+    <div class=" container ">
+
+        <div class="copyright ">
+            <!-- <div class="col-xl-12">
+                <img src="assets/img/ico-bank.png" class="img-fluid" style="margin-bottom: 10px;">
+            </div> -->
+            &copy; Copyright © 2020 <strong><span>Term and condition </span></strong>.
+        </div>
+        <div class="credits ">
+            Powered by Term form-group
+            <!-- <a href="https://bootstrapmade.com/ ">BootstrapMade</a> -->
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<a href="# " class="back-to-top "><i class="icofont-simple-up "></i></a>
+
+
+<div id="preloader "></div>
+
+<!-- Vendor JS Files -->
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js }"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/jquery.easing/jquery.easing.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/php-email-form/validate.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/venobox/venobox.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/waypoints/jquery.waypoints.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/counterup/counterup.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/owl.carousel/owl.carousel.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/aos/aos.js}"></script>
+
+<!-- Template Main JS File -->
+<script th:src="@{/js/main.js} "></script>
+
+</body>
+
+</html>
