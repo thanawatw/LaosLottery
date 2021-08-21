@@ -260,7 +260,7 @@
             if ($lotteryPrizes.some($lotteryPrize => $lotteryPrize.drawDate === $('#drawDate').val())) {
                 Swal.fire({
                     icon: 'error',
-                    title: "มีผลรางวัลประที่ " + $('#drawDate').val() + " แล้ว",
+                    title: "มีผลรางวัลประวันที่ " + $('#drawDate').val() + " แล้ว",
                     showConfirmButton: true
                 }).then((result) => {
                     return;
