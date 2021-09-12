@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <!-- <link href="assets/img/logo-phoenix.png" rel="icon">
-    <link href="assets/img/logo-phoenix.png" rel="apple-touch-icon"> -->
+    <link th:href="@{/img/laologo.png}" rel="icon">
+    <link th:href="@{/img/laologo.png}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -31,13 +31,6 @@
     <!-- Template Main CSS File -->
     <link th:href="@{/css/style.css}" rel="stylesheet">
 
-
-    <!-- =======================================================
-  * Template Name: Bootslander - v2.3.1
-  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -87,10 +80,10 @@
     <section id="pricing" class="pricing">
         <div class="container">
 
-
             <div class="section-title">
                 <h2>Laos lottery results</h2>
                 <p style="color: #043f7eef;">ຜົນການອອກຫວຍລາວ gold</p>
+                <span th:text="${#dates.format(todayLotteryPrize.getDrawDate(), 'งวดประจำวันที่ dd MMMM yyyy')}"></span>
             </div>
 
             <div class="row">
@@ -102,7 +95,6 @@
                         <h4 th:text="${todayLotteryPrize.fiveDigitsPrize ne null ? todayLotteryPrize.fiveDigitsPrize : 'XXXXX'}"></h4>
                     </div>
                 </div>
-
 
                 <div class="col-lg-3">
                     <div class="box true">
@@ -138,6 +130,7 @@
                         <h4 th:text="${todayLotteryPrize.twoDigitsPrize ne null ? todayLotteryPrize.twoDigitsPrize : 'XX'}"></h4>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -153,7 +146,7 @@
                 <p style="color: #043f7eef; font-size: 18px;">ຜົນການອອກຫວຍລາວ</p>
             </div>
 
-            <div class="row no-gutters" data-aos="fade-left">
+            <div class="row no-gutters table-responsive-xl" data-aos="fade-left">
 
                 <table class="table table-bordered table-dark text-center">
                     <thead>
@@ -164,7 +157,7 @@
                         <th scope="col">3 ຫນຶ່ງ</th>
                         <th scope="col">2 ຫນຶ່ງ</th>
                         <th scope="col">2 ຫນຶ່ງຕ່ໍາ</th>
-                        <th scope="col">2 ຫນຶ່ງ</th>
+                        <th scope="col">1 ຫນຶ່ງ</th>
 
                     </tr>
                     </thead>
@@ -181,13 +174,11 @@
                     </tbody>
                 </table>
 
-
             </div>
 
         </div>
     </section>
     <!-- End-->
-
 
 </main>
 <!-- End #main -->
