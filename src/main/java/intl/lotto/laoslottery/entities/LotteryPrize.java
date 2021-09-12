@@ -28,7 +28,7 @@ public class LotteryPrize {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 //	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date drawDate;
-	@Column(nullable = false, length = 5)
+	@Column(nullable = true, length = 5)
 	private String fiveDigitsPrize;
 	@Column(nullable = false, length = 2)
 	private String twoDigitsPrize;
